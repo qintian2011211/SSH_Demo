@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="stu"  class="com.qt.bean.StuBean">
+	<!-- <property name="id"  value="1"></property>
+		<property name="name" value="秦天"></property>
+		<property name="age" value="12"></property>
+		<property name="address" value="qweewqe"></property> -->	
+	</bean>
+	<!-- 给dao层建立联系 -->
+	<bean id="stuDao" class="com.qt.dao.StuDao">
+			
+	</bean>
+	<!-- 给service层建立联系 -->
+	<bean id="stuS" class="com.qt.service.StuService">
+			<property name="sd"  ref="stuDao"></property>
+	</bean>
+
+</beans>
